@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Practica - Lluvia de particulas</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="Style.css" />
+    </head>
+
+    <body>
+        <section>
+            <audio autoplay="autoplay" loop="loop">
+                <source src="Dark Piano - Null.mp3" type="audio/mp3" />
+
+            </audio>
+
+            <header>
+                         <div class="title"><img src="cthulhu.png"></div>
+                        <nav class="grid-container">
+                        <a href="index.html">Iä Iä Cthulhu Fhtagn</a>
+                           </nav>
+            </header>
+
+            <article>
+                <canvas id="mi-canvas"></canvas>
+            </article>
+
+            <footer>
+                <p>¡Oh pálidas olas salvajes, que recordáis
+                    El caos que la Tierra ha dejado tras de sí!
+                    Una sola cosa os pido:
+                    ¡Guardad por siempre oculto vuestro antiguo saber!</p>
+            </footer>
+        </section>
+
+        <script src='snowflakes.js'></script>
+        <script>
+            var canvas = document.getElementById('mi-canvas');
+            canvas.width = window.screen.availWidth;
+            canvas.height = window.screen.availHeight;
+
+            var imagen = new Image();
+            imagen.onload = function(){
+                var rain = new Rain("mi-canvas", imagen);
+                rain.let_it_snow();
+            }
+            imagen.src = "5846a033cef1014c0b5e47fb.png";
+        </script>
+    </body>
+</html>
